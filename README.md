@@ -19,15 +19,15 @@ Pretrained and instruction tuned generative text model (LLM). The Llama 3 instru
 
 ## Platform
 
-The Lamini Platform is enterprise-focused and is for building and deploying custom Large Language Models (LLMs). It integrates model refinement, deployment and inference (https://www.lamini.ai/product)
+The Lamini Platform is enterprise-focused and is for building and deploying custom Large Language Models (LLMs). It integrates [model refinement, deployment and inference](https://www.lamini.ai/product)
 
 ## Usage
 
-- Create SQLite database using data of choice (see *Raw data* for this project's data)
-- Create user-generated questions and SQL answers (see test-set.jsonl)
-- Set-up Lamini API Key (https://docs.lamini.ai/authenticate/) and add to .env file
-- Install required packages: see Text_to_SQL_Agent.ipynb (1st 2 cells)
-- Create/update .py files in util directory and modify as required
+- Create SQLite database using data of choice (see [Raw data](README.md) for this project's data)
+- Create user-generated questions and SQL answers (see [test-set.jsonl](data/test-set.jsonl))
+- Set-up [Lamini API Key](https://docs.lamini.ai/authenticate/) and add to .env file
+- Install required packages: see [Text_to_SQL_Agent.ipynb](Text_to_SQL_Agent.ipynb) (1st 2 cells)
+- Create/update .py files in [util](util/) directory and modify as required
 
 ## Raw data
 
@@ -37,7 +37,7 @@ SQLite database SpotifyData.db created from Top100MostStreamed.csv. CSV download
 
 - Evaluation of LLM-generated SQL against user-generated SQL. Iteration to improve metrics after prompt-engineering and chain of thought (CoT) prompting
 - Creation of training data ie increased volume of SQL and question pairs (for LLM fine-tuning), using LLM 
-- LLM fine-tuning with larger dataset using Lamini Memory Tuning (a fine-tuning method that optimises for zero error on specific facts by tuning millions of LoRA adapters and selecting them at inference time) https://www.lamini.ai/blog/lamini-memory-tuning 
+- LLM fine-tuning with larger dataset using [Lamini Memory Tuning](https://www.lamini.ai/blog/lamini-memory-tuning) (a fine-tuning method that optimises for zero error on specific facts by tuning millions of LoRA adapters and selecting them at inference time)  
 - Evaluation of fine-tuned model
 
 ## Results of iterations
