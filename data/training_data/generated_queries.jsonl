@@ -1,0 +1,24 @@
+{"question": "What are the genres with the highest average energy levels in the songs", "sql": "SELECT [top genre], AVG(energy) as average_energy FROM songs GROUP BY [top genre] ORDER BY average_energy DESC;"}
+{"question": "What are the top 5 most popular songs in the dataset", "sql": "SELECT artist, title, popularity as popularity FROM songs ORDER BY popularity DESC LIMIT 5;"}
+{"question": "Which artists have the highest average energy levels in their songs", "sql": "SELECT artist, AVG(energy) as average_energy FROM songs GROUP BY 1 ORDER BY average_energy DESC;"}
+{"question": "What are the top 3 most popular songs from the artist who appears the most often in the data", "sql": "SELECT s1.artist, s1.title, s1.popularity FROM songs s1 JOIN (SELECT artist from songs group by 1 order by count(*) desc limit 1) s2 ON s1.artist = s2.artist ORDER BY s1.popularity DESC LIMIT 3"}
+{"question": "What are the top genres in terms of both energy and danceability", "sql": "SELECT [top genre], AVG(energy) as average_energy, AVG(danceability) as average_danceability FROM songs GROUP BY 1 ORDER BY average_energy DESC, average_danceability DESC;"}
+{"question": "Which artist has the shortest average song length", "sql": "SELECT artist, AVG(length) AS average_length FROM songs GROUP BY artist ORDER BY average_length ASC LIMIT 1"}
+{"question": "What is the average energy level of all songs in the dataset", "sql": "SELECT AVG([energy]) from songs"}
+{"question": "Which three artists have the highest average popularity", "sql": "SELECT artist, AVG([popularity]) as avg_popularity FROM songs GROUP BY 1 ORDER BY avg_popularity DESC LIMIT 3"}
+{"question": "What are the 5 most energetic and danceable songs in the dataset", "sql": "SELECT title, energy, danceability FROM songs ORDER BY energy DESC, danceability DESC LIMIT 5;"}
+{"question": "What is the average length of songs in each top genre", "sql": "SELECT [top genre], AVG([length]) as average_length FROM songs GROUP BY [top genre];"}
+{"question": "What are the top 5 most energetic and danceable songs in the dataset, ranked by their popularity", "sql": "SELECT * FROM songs WHERE [energy] = (SELECT MAX([energy]) FROM songs) AND [danceability] = (SELECT MAX([danceability]) FROM songs) ORDER BY [popularity] DESC LIMIT 5"}
+{"question": "Which artists have the highest average energy and danceability, and what are their corresponding values", "sql": "SELECT artist, AVG(energy) as average_energy, AVG(danceability) as average_danceability FROM songs GROUP BY 1 ORDER BY average_energy DESC, average_danceability DESC;"}
+{"question": "What are the top 3 songs in the dataset in terms of energy and danceability", "sql": "SELECT title, energy, danceability FROM songs ORDER BY energy DESC, danceability DESC LIMIT 3"}
+{"question": "What is the average length of all songs in the dataset", "sql": "SELECT AVG([length]) from songs"}
+{"question": "What is the song with the highest energy and danceability levels", "sql": "SELECT * from songs WHERE [energy] = (SELECT MAX([energy]) FROM songs) AND [danceability] = (SELECT MAX([danceability]) FROM songs)"}
+{"question": "Which artists have the highest average energy levels in their songs", "sql": "SELECT artist, AVG(energy) as average_energy FROM songs GROUP BY 1 ORDER BY average_energy DESC;"}
+{"question": "What are the top 5 most popular songs in the dataset", "sql": "SELECT title, popularity FROM songs ORDER BY popularity DESC LIMIT 5"}
+{"question": "What is the most energetic song in the dataset", "sql": "SELECT title, energy FROM songs ORDER BY energy DESC LIMIT 1"}
+{"question": "What is the average beats per minute?", "answer": "171", "sql": "SELECT AVG([beats.per.minute]) from songs;"}
+{"question": "Which genre appears the most often in the data?", "answer": "dance pop", "sql": "SELECT [top genre] from songs group by 1 order by count(*) desc limit 1;"}
+{"question": "Which artist appears the most often in the data?", "answer": "Post Malone", "sql": "SELECT artist from songs group by 1 order by count(*) desc limit 1;"}
+{"question": "Which artist is least popular?", "answer": "Mike Posner", "sql": "SELECT artist  FROM songs GROUP BY 1 ORDER BY AVG(popularity) ASC LIMIT 1;"}
+{"question": "Which artist appears the most often in the data and how many times do they appear?", "answer": "Post Malone, 7", "sql": "SELECT artist, count(*) as count from songs group by 1 order by count desc limit 1;"}
+{"question": "Which artist is least popular and what is their average popularity?", "answer": "Mike Posner, 53.0", "sql": "SELECT artist, AVG(popularity) as average_popularity FROM songs GROUP BY 1 ORDER BY average_popularity ASC LIMIT 1;"}

@@ -1,0 +1,6 @@
+{"question": "What is the average beats per minute?", "answer": "171", "sql": "SELECT AVG([beats.per.minute]) from songs;"}
+{"question": "Which genre appears the most often in the data?", "answer": "dance pop", "sql": "SELECT [top genre] from songs group by 1 order by count(*) desc limit 1;"}
+{"question": "Which artist appears the most often in the data?", "answer": "Post Malone", "sql": "SELECT artist from songs group by 1 order by count(*) desc limit 1;"}
+{"question": "Which artist is least popular?", "answer": "Mike Posner", "sql": "SELECT artist  FROM songs GROUP BY 1 ORDER BY AVG(popularity) ASC LIMIT 1;"}
+{"question": "Which artist appears the most often in the data and how many times do they appear?", "answer": "Post Malone, 7", "sql": "SELECT artist, count(*) as count from songs group by 1 order by count desc limit 1;"}
+{"question": "Which artist is least popular and what is their average popularity?", "answer": "Mike Posner, 53.0", "sql": "SELECT artist, AVG(popularity) as average_popularity FROM songs GROUP BY 1 ORDER BY average_popularity ASC LIMIT 1;"}
