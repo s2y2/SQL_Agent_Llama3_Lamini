@@ -19,11 +19,11 @@ Pretrained and instruction tuned generative text model (LLM). The Llama 3 instru
 
 ## Platform
 
-The Lamini Platform is enterprise-focused and is for building and deploying custom Large Language Models (LLMs). It integrates [model refinement, deployment and inference](https://www.lamini.ai/product)
+The Lamini Platform is enterprise-focused and is for building and deploying custom Large Language Models (LLMs). It integrates [model refinement, deployment and inference.](https://www.lamini.ai/product)
 
 ## Usage
 
-- Create SQLite database using data of choice (see [Raw data](README.md) for this project's data)
+- Create SQLite database using data of choice (see 'Raw data' section below for this project's data)
 - Create user-generated questions and SQL answers (see [test-set.jsonl](data/test-set.jsonl))
 - Set-up [Lamini API Key](https://docs.lamini.ai/authenticate/) and add to .env file
 - Install required packages: see [Text_to_SQL_Agent.ipynb](Text_to_SQL_Agent.ipynb) (1st 2 cells)
